@@ -150,15 +150,7 @@ namespace OptimalMotion2.Domain
                     chart.AddMoment(new ChartMomentData(bundleAircrafts[j].Id,
                         bundleAircrafts[j].OrderMoment, type, subType));
 
-                    #region Это был чисто проверочный код (может пригодится)
-                    //var ids = outerAircrafts.Select(t => t.Id.Id).ToList();
-                    //if (ids.Contains(bundleAircrafts[j].Id.Id))
-                    //{
-                    //    chart.AddMoment(new ChartMomentData(bundleAircrafts[j].Id, 
-                    //        bundleAircrafts[j].OrderMoment, type, ChartMomentDataType.Conflict));
-                    //    continue;
-                    //}
-                    #endregion
+                    
                 }
             }
         }

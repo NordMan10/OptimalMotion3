@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using OptimalMotion2.Domain.Static;
+using OptimalMotion2.Enums;
 
 namespace OptimalMotion2.Domain
 {
@@ -35,9 +36,9 @@ namespace OptimalMotion2.Domain
             return _instance;
         }
 
-        public ITakingOffAircraft GetTakingOffAircraft(IMoment takingOffMoment, IRunway runway, ISpecPlatform specPlatform)
+        public ITakingOffAircraft GetTakingOffAircraft(IMoment plannedTakingOffMoment, IRunway runway, ISpecPlatform specPlatform)
         {
-            var creationData = GetTakingOffAircraftCreationData(takingOffMoment, runway, specPlatform);
+            var creationData = GetTakingOffAircraftCreationData(plannedTakingOffMoment, runway, specPlatform);
             return new TakingOffAircraft(creationData);
         }
 
@@ -49,18 +50,18 @@ namespace OptimalMotion2.Domain
         }
 
         
-        private ITakingOffAircraftData GetTakingOffAircraftCreationData(IMoment takingOffMoment, 
+        private ITakingOffAircraftData GetTakingOffAircraftCreationData(IMoment plannedTakingOffMoment, AircraftType type, 
             IRunway runway, ISpecPlatform specPlatform)
         {
             var id = idGenerator.GetUniqueAircraftId();
 
-            var creationMoments = new TakingOffAircraftMoments(takingOffMoment);
+            var creationMoments = new TakingOffAircraftMoments(plannedTakingOffMoment);
             var creationIntervals = GetTakingOffAircraftCreationIntervals();
 
             var processingIsNeededVariants = new List<bool> {true};
             var processingIsNeeded = processingIsNeededVariants[random.Next(0, processingIsNeededVariants.Count)];
 
-            return new TakingOffAircraftData(id, creationMoments, creationIntervals, runway, specPlatform, processingIsNeeded);
+            return new TakingOffAircraftData(id, type, creationMoments, creationIntervals, runway, specPlatform, processingIsNeeded);
         }
 
         /// <summary>

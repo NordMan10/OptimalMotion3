@@ -18,48 +18,6 @@ namespace OptimalMotion2.Domain
         public Dictionary<IMoment, IMoment> OccupationIntervals { get; }
 
         /// <summary>
-        /// Метод, возвращающий задержку для ожидания обработки и для безопасного слияния (в кортеже)
-        /// </summary>
-        /// <returns></returns>
-        //public Tuple<int, int> GetProcessingAndSafeMergeDelay(IInterval aircraftInterval, int safeMergeValueParam)
-        //{
-        //    // Принимаем интервал занимания Спец площадки и задержку для безопасного слияния от обратившегося судна
-        //    var currentInterval = aircraftInterval;
-        //    var safeMergeValue = safeMergeValueParam;
-
-        //    // Получаем расширенный интервал:
-        //    // Получаем начальный момент расширенного интервала:
-        //    var extendedIntervalStartMoment = currentInterval.StartMoment.Value - safeMergeValue;
-        //    if (extendedIntervalStartMoment < 0)
-        //        extendedIntervalStartMoment = 0;
-        //    // Создаем расширенный интервал
-        //    var extendedInterval = new Interval(new Moment(extendedIntervalStartMoment),
-        //        new Moment(currentInterval.EndMoment.Value + safeMergeValue));
-
-        //    // Получаем левый и правый интервалы (метод ЗПД) относительно принятого интервала;
-        //    var leftAndRightIntervals = this.GetLeftAndRightIntervalsRelative(currentInterval);
-        //    var leftInterval = leftAndRightIntervals.Item1;
-        //    var rightInterval = leftAndRightIntervals.Item2;
-
-        //    // Проверяем пересечение расширенного интервала с ближайшими левым и правым интервалом:
-        //    // Если пересечения нет => возвращаем два нуля;
-        //    if (leftInterval == null || !this.DoesIntervalsIntersect(extendedInterval, leftInterval))
-        //        if (rightInterval == null || !this.DoesIntervalsIntersect(extendedInterval, rightInterval))
-        //            return Tuple.Create(0, 0);
-
-        //    // Если пересечение есть, то рассчитываем задержки
-        //    return GetDelaysForNewLastAircraft(currentInterval, safeMergeValue);
-
-        //    // Пока что сделаем расчет задержек упрощенным, потом сюда вернемся.ы
-        //    //// Если есть => проверяем пересечение для изначального интервала:
-        //    //// Если нет пересечения у изначального интервала => 
-        //    //if (rightInterval == null || !this.DoesIntervalsIntersect(currentInterval, rightInterval))
-        //    //    if (leftInterval == null || !this.DoesIntervalsIntersect(currentInterval, leftInterval))
-        //    //        // Рассчитываем задержку для безопасного слияния
-        //    //        if ()
-        //}
-
-        /// <summary>
         /// Метод расчета задержки для безопасного слияния
         /// </summary>
         /// <param name="leftIntervalParam"></param>

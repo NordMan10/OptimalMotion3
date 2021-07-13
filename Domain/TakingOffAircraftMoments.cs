@@ -12,15 +12,14 @@ namespace OptimalMotion2.Domain
         /// <param name="engineStartMoment"></param>
         /// <param name="arriveToPSMoment"></param>
         /// <param name="arriveToESMoment"></param>
-        public TakingOffAircraftMoments(IMoment takingOffMoment, IMoment engineStartMoment = null)
+        public TakingOffAircraftMoments(IMoment plannedTakingOff)
         {
-            TakingOff = takingOffMoment;
-            EngineStart = engineStartMoment;
+            PlannedTakingOff = plannedTakingOff;
         }
         /// <summary>
         /// Плановый момент вылета
         /// </summary>
-        public IMoment PlannedTkingOff { get; }
+        public IMoment PlannedTakingOff { get; }
 
         public IMoment TakingOff { get; }
         /// <summary>
