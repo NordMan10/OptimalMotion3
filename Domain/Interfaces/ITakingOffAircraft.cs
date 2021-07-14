@@ -12,6 +12,7 @@ namespace OptimalMotion2.Domain
         bool ProcessingIsNeeded { get; }
         TakingOffAircraftMoments Moments { get; }
         TakingOffAircraftIntervals Intervals { get; }
+        
 
         void SetAircraftMoments(int aircraftIndex, IAircraftBundle takingOffBundle);
         void SetAircraftMomentsWithProcessing(int aircraftIndex, IInterval differenceInterval);

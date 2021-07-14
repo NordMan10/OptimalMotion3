@@ -21,11 +21,10 @@ namespace OptimalMotion2.Domain
         /// </summary>
         public IMoment PlannedTakingOff { get; }
 
-        public IMoment TakingOff { get; }
         /// <summary>
         /// May be null!
         /// </summary>
-        public IMoment EngineStart { get; set; }
+        public IMoment Start { get; set; }
         /// <summary>
         /// May be null!
         /// </summary>

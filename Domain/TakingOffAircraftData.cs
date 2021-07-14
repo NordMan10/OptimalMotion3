@@ -6,26 +6,31 @@ namespace OptimalMotion2.Domain
 {
     public class TakingOffAircraftData : ITakingOffAircraftData
     {
-        public TakingOffAircraftData(IAircraftId id, AircraftType type, TakingOffAircraftMoments moments,
-            TakingOffAircraftIntervals intervals, IRunway runway,
-            ISpecPlatform specPlatform, bool processingIsNeeded)
+        public TakingOffAircraftData(int id, AircraftType type, TakingOffAircraftMoments moments,
+            TakingOffAircraftIntervals intervals, int runwayId,
+            int specPlatformId, int parkingId, bool processingIsNeeded)
         {
             Id = id;
             Type = type;
             Moments = moments;
             Intervals = intervals;
-            Runway = runway;
-            SpecPlatform = specPlatform;
+            RunwayId = runwayId;
+            SpecPlatformId = specPlatformId;
+            ParkingId = parkingId;
             ProcessingIsNeeded = processingIsNeeded;
         }
 
-        public IAircraftId Id { get; }
+        public int Id { get; }
         public TakingOffAircraftMoments Moments { get; }
         public TakingOffAircraftIntervals Intervals { get; }
-        public IRunway Runway { get; }
-        public ISpecPlatform SpecPlatform { get; }
         public bool ProcessingIsNeeded { get; }
 
         public AircraftType Type { get; }
+
+        public int RunwayId { get; }
+
+        public int SpecPlatformId { get; }
+
+        public int ParkingId { get; }
     }
 }

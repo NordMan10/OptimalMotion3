@@ -6,12 +6,13 @@ namespace OptimalMotion2.Domain
 {
     public interface ITakingOffAircraftData
     {
-        IAircraftId Id { get; }
+        int Id { get; }
         AircraftType Type { get; }
         TakingOffAircraftMoments Moments { get; }
         TakingOffAircraftIntervals Intervals { get; } 
-        IRunway Runway { get; }
-        ISpecPlatform SpecPlatform { get; } 
+        int RunwayId { get; }
+        int SpecPlatformId { get; } 
+        int ParkingId { get; }
         bool ProcessingIsNeeded { get; }
     }
 }

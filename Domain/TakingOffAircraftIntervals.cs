@@ -5,28 +5,29 @@ namespace OptimalMotion2.Domain
     public class TakingOffAircraftIntervals
     {
         public TakingOffAircraftIntervals(
-            IInterval motionFromParkingToPS, IInterval motionFromPSToES, IInterval takeoff,
-            IInterval motionFromParkingToSP, IInterval motionFromSPToPS, IInterval processing, IInterval minToPass)
+
+            int takingOff, int motionFromPSToES, int motionFromParkingToPS,
+            int motionFromSPToPS, int processing, int motionFromParkingToSP)
         {
             MotionFromParkingToPS = motionFromParkingToPS;
             MotionFromPSToES = motionFromPSToES;
-            TakingOff = takeoff;
+            TakingOff = takingOff;
             MotionFromParkingToSP = motionFromParkingToSP;
             MotionFromSPToPS = motionFromSPToPS;
             Processing = processing;
-            MinToPass = minToPass;
+            //MinToPass = minToPass;
         }
 
-        public IInterval MotionFromParkingToPS { get; }
-        public IInterval MotionFromPSToES { get; }
-        public IInterval TakingOff { get; }
-        public IInterval Processing { get; }
-        public IInterval MotionFromParkingToSP { get; }
-        public IInterval MotionFromSPToPS { get; }
+        public int MotionFromParkingToPS { get; }
+        public int MotionFromPSToES { get; }
+        public int TakingOff { get; }
+        public int Processing { get; }
+        public int MotionFromParkingToSP { get; }
+        public int MotionFromSPToPS { get; }
         /// <summary>
         /// Расчетный, минимально необходимый для пропуска садящегося ВС, интервал ожидания на ПРДВ
         /// </summary>
-        public IInterval MinToPass { get; }
+        //public int MinToPass { get; }
 
     }
 }

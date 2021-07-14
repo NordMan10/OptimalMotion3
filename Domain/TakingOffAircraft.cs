@@ -31,6 +31,7 @@ namespace OptimalMotion2.Domain
         public bool ProcessingIsNeeded { get; }
         public IMoment OrderMoment { get; set; }
         public AircraftType Type { get; }
+        
 
         public int GetRunwayId()
         {
@@ -90,6 +91,10 @@ namespace OptimalMotion2.Domain
                 new Moment(Moments.ArriveToES.Value - AircraftMotionParameters.MotionFromPSToES);
             Moments.EngineStart =
                 new Moment(Moments.ArriveToPS.Value - AircraftMotionParameters.MotionFromParkingToPS);
+
+            
         }
+
+
     }
 }

@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{F4136690-43FD-4B2C-9B9B-14DA180BE758}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>OptimalMotion3</RootNamespace>
-    <AssemblyName>OptimalMotion3</AssemblyName>
+    <RootNamespace>OptimalMotion2</RootNamespace>
+    <AssemblyName>OptimalMotion2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -120,6 +120,7 @@
     <Compile Include="Domain\Static\SpecPlatformParameters.cs" />
     <Compile Include="Domain\Chart.cs" />
     <Compile Include="Domain\ChartMomentData.cs" />
+    <Compile Include="Domain\Static\TakingOffAircraftsData.cs" />
     <Compile Include="Domain\Table.cs" />
     <Compile Include="Domain\TableRow.cs" />
     <Compile Include="Domain\TableRowData.cs" />
